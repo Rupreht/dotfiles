@@ -7,7 +7,7 @@ export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
 export PATH="/usr/local/opt/openldap/bin:$PATH"
 export PATH="/usr/local/opt/openldap/sbin:$PATH"
 export PATH="/usr/local/opt/curl-openssl/bin:$PATH"
-export PATH="/usr/local/opt/net-snmp/bin:	:$PATH"
+export PATH="/usr/local/opt/net-snmp/bin:/usr/local/opt/net-snmp/sbin:$PATH"
 export PATH="~/.php/bin:$PATH"
 
 if [ -d "$HOME/perl5/bin" ]; then

@@ -1,0 +1,52 @@
+export LANG=ru_RU.UTF-8
+export LC_ALL=ru_RU.UTF-8
+export LC_CTYPE=ru_RU.UTF-8
+
+fpath=(/usr/local/sbin $fpath)
+fpath=(/usr/local/opt/openssl@1.1/bin $fpath)
+fpath=(/usr/local/opt/openldap/bin /usr/local/opt/openldap/sbin $fpath)
+fpath=(/usr/local/opt/curl-openssl/bin $fpath)
+fpath=(/usr/local/opt/net-snmp/bin /usr/local/opt/net-snmp/sbin $fpath)
+fpath=($HOME/.php/bin $fpath)
+
+if [ -d "$HOME/perl5/bin" ]; then
+    fpath=($HOME/perl5/bin $fpath)
+	export PERL5LIB="$HOME/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"
+	export PERL_LOCAL_LIB_ROOT="$HOME/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"
+	export PERL_MB_OPT="--install_base \"$HOME/perl5\""
+	export PERL_MM_OPT="INSTALL_BASE=$HOME/perl5"
+#    source ~/perl5/perlbrew/etc/bashrc
+fi
+
+export DISPLAY=:0.0
+export MANPATH=/opt/local/share/man:$MANPATH
+export HISTFILESIZE=5000
+export INPUTRC=~/.inputrc
+export EDITOR="vim"
+export PYTHONIOENCODING=UTF-8
+export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
+
+if [ -f "$HOME/.not-public" ]; then
+    . $HOME/.not-public
+fi
+
+export HOMEBREW_NO_EMOJI=1
+export HOMEBREW_CASK_OPTS="--appdir=~/Applications --fontdir=/Library/Fonts"
+fpath=(/usr/local/share/zsh-completions $fpath)
+
+if [ -d /Applications/VLC.app/Contents/MacOS ]; then
+    fpath=(/Applications/VLC.app/Contents/MacOS $fpath)
+fi
+
+fpath=($HOME/.pyenv/bin $fpath)
+export PYENV_VIRTUALENV_DISABLE_PROMPT=1
+if which pyenv-virtualenv-init > /dev/null; then
+	eval "$(pyenv init -)"
+	eval "$(pyenv virtualenv-init -)"
+fi
+
+if [ -d "$HOME/bin" ]; then
+	fpath=($HOME/bin $fpath)
+fi
+
+path=(%path $fpath)
