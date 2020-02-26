@@ -1,0 +1,9 @@
+export PATH="/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin"
+
+if [ -d "$HOME/bin" ]; then
+   export PATH="$HOME/bin:$PATH"
+fi
+
+if [ "$BASH" ]; then
+    . ~/.bashrc
+fi

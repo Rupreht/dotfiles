@@ -1,0 +1,4 @@
+ZSH_THEME="random"
+
+fpath=(/usr/local/share/zsh-completions $fpath)
+

@@ -1,0 +1,33 @@
+# Temp files
+*.[oa]
+*~
+*.swp
+*.cache
+*.bak
+*.tmp
+*.old
+*.new
+
+# log files
+*.log
+
+# Compressed files
+*.gz
+*.tar.gz
+*.tar.bz2
+*.zip
+*.rar
+
+# patch/diff files
+*.diff
+*.patch
+
+# Proyect files
+*.komodoproject
+*.iml
+.idea
+nb-configuration.xml
+
+# Ctags file
+.tags
+

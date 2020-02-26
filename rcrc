@@ -1,0 +1,1 @@
+EXCLUDES="irbrc *:*emacs* dotfiles:python* *:README*"

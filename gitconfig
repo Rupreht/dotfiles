@@ -1,0 +1,33 @@
+[user]
+	name = Nikolay Ermolovich
+	email = rupreht@rupreht.ru
+[mergetool "araxis"]
+	cmd = araxis-mergetool \"$LOCAL\" \"$REMOTE\" \"$MERGED\" \"$BASE\"
+[merge]
+	tool = araxis
+[alias]
+	su = submodule update
+	sf = submodule foreach
+	ci = commit
+	co = checkout
+	st = status
+	mg = merge --no-ff
+	br = branch
+	df = diff
+	plog = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	slog = log --pretty=format:'%H'
+[core]
+	excludesfile = ~/.gitignore_global
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[color]
+	ui = true
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

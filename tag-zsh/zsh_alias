@@ -1,0 +1,8 @@
+alias ll='ls -al'
+alias la='ls -A'
+alias l='ls -CF'
+alias s='cd ~/sandbox/'
+
+# OS
+alias cleardns="sudo dscacheutil -flushcache;sudo killall -HUP mDNSResponder; say cache flushed"
+
