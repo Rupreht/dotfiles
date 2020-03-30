@@ -49,4 +49,20 @@ if [ -d "$HOME/bin" ]; then
 	fpath=($HOME/bin $fpath)
 fi
 
-path=(%path $fpath)
+path=($path $fpath)
+
+# openldap
+export PATH="/usr/local/opt/openldap/bin:$PATH"
+export PATH="/usr/local/opt/openldap/sbin:$PATH"
+
+# for compile openssl
+export LDFLAGS="-L/usr/local/opt/openssl@1.1/lib"
+export CPPFLAGS="-I/usr/local/opt/openssl@1.1/include"
+export PKG_CONFIG_PATH="/usr/local/opt/openssl@1.1/lib/pkgconfig"
+
+# mariadb 10.3
+export PATH="/usr/local/opt/mariadb@10.3/bin:$PATH"
+export LDFLAGS="-L/usr/local/opt/mariadb@10.3/lib"
+export CPPFLAGS="-I/usr/local/opt/mariadb@10.3/include"
+export PKG_CONFIG_PATH="/usr/local/opt/mariadb@10.3/lib/pkgconfig"
+#export PKG_CONFIG_PATH="/usr/local/opt/mariadb@10.3/share/pkgconfig"
